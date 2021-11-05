@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import './component/MusicList'
+import MusicList from './component/MusicList';
 
-export class App extends Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -11,9 +13,9 @@ export class App extends Component {
 
   async componentDidMount(){
     await axios.get(`https://jsonplaceholder.typicode.com/users`)
-    .then((found) =>{
+    .then((res) =>{
     console.log(res.data)
-    const music =res.data;
+    const music = res.data;
     this.setState({music})
     })
   }
@@ -23,9 +25,9 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <MusicList music={this.state.people} />
+        <MusicList music={this.state.music} />
       </div>
-    )
+    );
   }
 }
 
