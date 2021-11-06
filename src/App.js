@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import './component/MusicList'
 import MusicList from './component/MusicList';
+import './App.css'
 
 class App extends Component {
   constructor() {
@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   async componentDidMount(){
-    await axios.get(`https://jsonplaceholder.typicode.com/users`)
+    await axios.get(`http://www.devcodecampmusiclibrary.com/api/music`)
     .then((res) =>{
     console.log(res.data)
     const music = res.data;
@@ -24,9 +24,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <MusicList music={this.state.music} />
-      </div>
+
+      <body>
+        <div>
+          <MusicList music={this.state.music} />
+        </div>
+      </body>
     );
   }
 }

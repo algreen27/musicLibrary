@@ -4,13 +4,12 @@ import './MusicList.css';
 
 const MusicList = ({music}) => {
     return (
-        <body>
-                        <div>
-                {music.map((album,index)=>
-                <li key={index}>{album.address.suite} : {album.address.city} </li>)}
-            </div>
+            <div>
+                {music.map((songs,index)=>
+                <li key={index}>{songs.title}</li>)
+                }
+            </div>   
 
-        </body>
     )
 }
 
