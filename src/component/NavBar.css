@@ -1,0 +1,27 @@
+.container {
+    position: fixed;
+    margin:auto;
+    width: auto;
+    top: 20;
+  }
+  
+  /* The navbar */
+  .topnav {
+    overflow:visible;
+    background-color: rgb(12 21 23) 1;
+  }
+  
+  /* Navbar links */
+  .topnav a {
+    float:right;
+    color: rgb(12, 12, 219);
+    text-align: center;
+    padding: 10px 12px;
+    font-size: 1.5em;
+    font-weight: bolder;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+  }

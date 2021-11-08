@@ -1,4 +1,13 @@
-.grid{
-    display: grid;
-    place-content: center;
+.mu-li{
+    color:rgb(235, 17, 17);
+    text-transform: uppercase;
+    text-shadow: 2px 2px black;
+    font-size: 1.25em;
+    font:bolder;
+    list-style-type:none;
+    margin-left: 1em;
+    min-width: max-content;
+    display:flex;
+  
+
 }

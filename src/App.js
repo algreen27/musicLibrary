@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import MusicList from './component/MusicList';
 import './App.css'
-import NavBar from './component/NavBar';
+// import NavBar from './component/NavBar';
+import Search from './component/Search';
 
 class App extends Component {
   constructor() {
@@ -27,12 +28,9 @@ class App extends Component {
     return (
 
       <body>
-        <div>
-          <NavBar />
-        </div>
-        <div>
-          <MusicList music={this.state.music} />
-        </div>
+        {/* <div><NavBar /></div> */}
+        <div><MusicList music={this.state.music} /></div>
+        <div><Search /></div>
       </body>
     );
   }
