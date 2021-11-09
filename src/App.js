@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import MusicList from "./component/MusicList";
 import "./App.css";
-// import NavBar from './component/NavBar';
+import NavBar from './component/NavBar';
 import Search from "./component/Search";
 
 class App extends Component {
@@ -40,7 +40,7 @@ class App extends Component {
   componentDidUpdate() {}
 
   // searchMusic = (newfind) => {
-  //   f
+  //   
   // }
 
   singleSearch = ()=> {
@@ -49,7 +49,6 @@ class App extends Component {
   render() {
     return (
       <body>
-        {/* <div><NavBar /></div> */}
         <div>
           <Search handleChange={this.handleChange} userInput={this.state.userInput} />
         </div>
@@ -57,6 +56,8 @@ class App extends Component {
         <div>
           <MusicList music={this.state.music} userInput={this.state.userInput}/>
         </div>
+        <div><NavBar /></div>
+
       </body>
     );
   }
