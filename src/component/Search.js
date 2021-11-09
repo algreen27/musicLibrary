@@ -15,27 +15,11 @@ class Search extends Component {
         }
     }
 
-    handleChange = (event) => {
-        console.log(event.target.value)
-        this.setState({
-            title: event.target.value
-        });
-    }
-    handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(this.state);
-        this.props.searchNewSong(this.state);
-
-        }
     
     render() {
         return (
-            <form onSumbit={this.handleSubmit}>
-                <label>Search</label>
-                <input name="title" onChange={this.handleChange} value={this.state.title} />
-                <button type="submit">Search</button>
+                <input name="title" onChange={this.props.handleChange} value={this.props.userInput} />
                 
-            </form>
         )
     }
 }
