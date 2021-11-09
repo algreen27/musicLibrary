@@ -1,19 +1,44 @@
-import React from 'react';
 import './Search.css';
 
+import React, { Component } from 'react'
 
+class Search extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            title: '',
+            album: '',
+            artist: '',
+            genre: '',
+            releaseDate: ''
 
-const Search = () => {
-    return (
-        <div>
+        }
+    }
 
-            <form class="example" action="action_page.php">
-            <input type="text" placeholder="Search.." name="search"></input>
-            <button type="submit"><i class="fa fa-search"></i></button>
+    handleChange = (event) => {
+        console.log(event.target.value)
+        this.setState({
+            title: event.target.value
+        });
+    }
+    handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state);
+
+        }
+    
+    render() {
+        return (
+            <form onSumbit={this.handleSubmit}>
+                <label>Search</label>
+                <input name="title" onChange={this.handleChange} value={this.state.title} />
+                <button type="submit">Search</button>
+                
             </form>
-        </div>
-    )
+        )
+    }
 }
+
 
 export default Search
 
