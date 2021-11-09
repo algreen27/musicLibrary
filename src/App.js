@@ -6,34 +6,38 @@ import './App.css'
 import Search from './component/Search';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      music:[],
-    };
-  }
+    constructor() {
+      super();
+      this.state = {
+        music:[],
+      };
+    }
 
-  async componentDidMount(){
-    await axios.get(`http://www.devcodecampmusiclibrary.com/api/music`)
-    .then((res) =>{
-    console.log(res.data)
-    const music = res.data;
-    this.setState({music})
-    })
-  }
+    async componentDidMount(){
+      await axios.get(`http://www.devcodecampmusiclibrary.com/api/music`)
+      .then((res) =>{
+      console.log(res.data)
+      const music = res.data;
+      this.setState({music})
+      })
+    }
 
-  componentDidUpdate() {}
+    componentDidUpdate() {}
 
-  render() {
-    return (
+    searchMusic = (newfind) => {
+      console.log('This is it', newfind);
+    }
 
-      <body>
-        {/* <div><NavBar /></div> */}
-        <div><MusicList music={this.state.music} /></div>
-        <div><Search /></div>
-      </body>
-    );
-  }
+    render() {
+      return (
+
+        <body>
+          {/* <div><NavBar /></div> */}
+          <div><MusicList music={this.state.music} /></div>
+          <div><Search searchNewSong={this.searchMusic} /></div>
+        </body>
+      );
+    }
 }
 
 export default App

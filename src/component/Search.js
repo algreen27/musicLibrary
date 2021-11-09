@@ -24,6 +24,7 @@ class Search extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         console.log(this.state);
+        this.props.searchNewSong(this.state);
 
         }
     
